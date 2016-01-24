@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/brent/.config'
+let g:netrw_dirhist_2='/etc/cups'
+let g:netrw_dirhist_3='/home/userfiles/brent/Documents/Agitated Filter Dryer/Dynamic Solution/programs'
+let g:netrw_dirhist_4='/home/userfiles/brent/Documents/Agitated Filter Dryer/Dynamic Solution/documentation'
+let g:netrw_dirhist_5='/home/userfiles/brent/Documents/Impact Measurements/20120912'
+let g:netrw_dirhist_6='/home/brent/.virtualenvs'
+let g:netrw_dirhist_7='/home/brent'
+let g:netrw_dirhist_8='/home/brent/.vim'
