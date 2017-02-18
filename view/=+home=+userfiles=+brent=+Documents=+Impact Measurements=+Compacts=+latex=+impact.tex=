@@ -1,0 +1,213 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer> <silent> <F9> <Plug>Tex_Completion
+imap <buffer> <C-CR> <Plug>Tex_InsertItemOnNextLine
+imap <buffer> <silent> <S-F7> <Plug>Tex_FastCommandChange
+imap <buffer> <silent> <F7> <Plug>Tex_FastCommandInsert
+inoremap <buffer> <silent> <S-F3> =Tex_PutEnvironment("bmatrix")
+inoremap <buffer> <silent> <S-F2> =Tex_PutEnvironment("eqnarray")
+inoremap <buffer> <silent> <S-F1> =Tex_PutEnvironment("eqnarray*")
+imap <buffer> <silent> <S-F5> <Plug>Tex_FastEnvironmentChange
+imap <buffer> <silent> <F5> <Plug>Tex_FastEnvironmentInsert
+imap <buffer> <silent> ì <Plug>Tex_LeftRight
+imap <buffer> <silent> ã <Plug>Tex_MathCal
+imap <buffer> <silent> â <Plug>Tex_MathBF
+imap <buffer> é <Plug>Tex_InsertItemOnThisLine
+nmap <buffer> <silent> \rf <Plug>Tex_RefreshFolds
+nmap <buffer> \ls <Plug>Tex_ForwardSearch
+nmap <buffer> \lv <Plug>Tex_View
+vmap <buffer> \ll <Plug>Tex_Compile
+nmap <buffer> \ll <Plug>Tex_Compile
+nnoremap <buffer> <Plug>Tex_ForwardSearch :call Tex_ForwardSearchLaTeX()
+nnoremap <buffer> <Plug>Tex_View :call Tex_ViewLaTeX()
+vnoremap <buffer> <Plug>Tex_Compile :call Tex_PartCompile()
+nnoremap <buffer> <Plug>Tex_Compile :call Tex_RunLaTeX()
+vmap <buffer> <silent> <F7> <Plug>Tex_FastCommandInsert
+nmap <buffer> <silent> <S-F7> <Plug>Tex_FastCommandChange
+nmap <buffer> <silent> <F7> <Plug>Tex_FastCommandInsert
+nmap <buffer> <silent> <S-F5> <Plug>Tex_FastEnvironmentChange
+vmap <buffer> <silent> <F5> <Plug>Tex_FastEnvironmentInsert
+nmap <buffer> <silent> <F5> <Plug>Tex_FastEnvironmentInsert
+nmap <buffer> <silent> ì <Plug>Tex_LeftRight
+vmap <buffer> <silent> ã <Plug>Tex_MathCal
+vmap <buffer> <silent> â <Plug>Tex_MathBF
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:%\ -,mO:%\ \ ,eO:%%,:%
+setlocal commentstring=%%s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=\\\\\\([egx]\\|char\\|mathchar\\|count\\|dimen\\|muskip\\|skip\\|toks\\)\\=def\\|\\\\font\\|\\\\\\(future\\)\\=let\\|\\\\new\\(count\\|dimen\\|skip\\|muskip\\|box\\|toks\\|read\\|write\\|fam\\|insert\\)\\|\\\\\\(re\\)\\=new\\(boolean\\|command\\|counter\\|environment\\|font\\|if\\|length\\|savebox\\|theorem\\(style\\)\\=\\)\\s*\\*\\=\\s*{\\=\\|DeclareMathOperator\\s*{\\=\\s*
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'tex'
+setlocal filetype=tex
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=\\\\input\\|\\\\include{
+setlocal includeexpr=substitute(v:fname,\ '^.\\{-}{\\|}.*',\ '',\ 'g')
+setlocal indentexpr=GetTeXIndent()
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,[,(,{,),},],&,=^s*\\bibitem,=\\item
+setlocal noinfercase
+setlocal iskeyword=48-57,a-z,A-Z,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeprg=pdflatex\ -interaction=nonstopmode\ $*
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal spell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=~/.vim/spell/en.utf-8.add
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=.tex
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'tex'
+setlocal syntax=tex
+endif
+setlocal tabstop=4
+setlocal tagcase=
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+1,3fold
+13,31fold
+36,86fold
+97,102fold
+125,166fold
+168,188fold
+87,188fold
+198,204fold
+211,214fold
+215,218fold
+226,229fold
+235,238fold
+240,243fold
+258,261fold
+278,284fold
+296,299fold
+301,304fold
+308,311fold
+189,317fold
+323,334fold
+352,364fold
+379,387fold
+410,422fold
+423,435fold
+472,496fold
+512,557fold
+558,603fold
+318,613fold
+614,633fold
+1
+normal! zo
+13
+normal! zo
+36
+normal! zo
+87
+normal! zo
+97
+normal! zo
+125
+normal! zo
+168
+normal! zo
+189
+normal! zo
+189
+normal! zc
+318
+normal! zo
+323
+normal! zo
+472
+normal! zo
+512
+normal! zo
+558
+normal! zo
+614
+normal! zo
+let s:l = 88 - ((7 * winheight(0) + 32) / 64)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+88
+normal! 0
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :

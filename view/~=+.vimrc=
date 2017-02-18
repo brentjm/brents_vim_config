@@ -15,8 +15,11 @@ nnoremap <buffer> <silent> ]] m':call search('^\s*fu\%[nction]\>', "W")
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
+setlocal backupcopy=
 setlocal balloonexpr=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -45,6 +48,7 @@ setlocal expandtab
 if &filetype != 'vim'
 setlocal filetype=vim
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -70,6 +74,7 @@ setlocal iskeyword=@,48-57,_,192-255,#
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -104,19 +109,27 @@ if &syntax != 'vim'
 setlocal syntax=vim
 endif
 setlocal tabstop=4
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=78
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 58 - ((51 * winheight(0) + 27) / 55)
+90
+normal! zo
+93
+normal! zo
+111
+normal! zo
+let s:l = 12 - ((11 * winheight(0) + 29) / 59)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-58
+12
 normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

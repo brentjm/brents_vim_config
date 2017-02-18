@@ -3,8 +3,11 @@ argglobal
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
+setlocal backupcopy=
 setlocal balloonexpr=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -33,6 +36,7 @@ setlocal expandtab
 if &filetype != 'gitconfig'
 setlocal filetype=gitconfig
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -58,6 +62,7 @@ setlocal iskeyword=@,48-57,192-255,-
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -92,22 +97,24 @@ if &syntax != 'gitconfig'
 setlocal syntax=gitconfig
 endif
 setlocal tabstop=4
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 2
 normal! zo
-let s:l = 2 - ((1 * winheight(0) + 28) / 57)
+let s:l = 4 - ((3 * winheight(0) + 29) / 59)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
-normal! 05|
+4
+normal! 035|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :
