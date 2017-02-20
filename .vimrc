@@ -2,7 +2,7 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 "call vundle#rc()
 call vundle#begin()
 
@@ -21,6 +21,8 @@ Plugin 'benmills/vimux'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-latex/vim-latex'
 Plugin 'vim-scripts/VOoM'
+Plugin 'wilywampa/vim-ipython'
+Plugin 'julienr/vim-cellmode'
 
 call vundle#end()
 filetype plugin indent on
@@ -108,3 +110,5 @@ set expandtab
 if has ('gui_running')
     highlight Pmenu guibg=#cccccc gui=bold
 endif
+
+set encoding=utf-8
