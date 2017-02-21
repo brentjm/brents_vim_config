@@ -2,7 +2,8 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim/
+"set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/bundle/vundle/
 "call vundle#rc()
 call vundle#begin()
 
@@ -21,8 +22,10 @@ Plugin 'benmills/vimux'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-latex/vim-latex'
 Plugin 'vim-scripts/VOoM'
-Plugin 'wilywampa/vim-ipython'
-Plugin 'julienr/vim-cellmode'
+"Plugin 'wilywampa/vim-ipython' "Only worked if recompiled vim
+"Plugin 'julienr/vim-cellmode "Only worked if recompiled vim
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'KevinGoodsell/vim-csexact' "Only works if vim compiled with +gui
 
 call vundle#end()
 filetype plugin indent on
@@ -70,7 +73,7 @@ let g:pymode_folding = 0
 
 
 "****** Powerline setup *********
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
 
 "****** NERDTree mapping ***********
@@ -79,11 +82,13 @@ map <F2> :NERDTreeToggle<CR>
 "****** Tagbar ***********
 nmap <F8> :TagbarToggle<CR>
 
+let g:solarized_termcolors=256
+
 "******** General configuration ************
 
 set history=700     " set command history
 set autoread        " autoread when a file is changed from outside
-"set showmode        " show current mode
+set showmode        " show current mode
 set mouse=a         " use mouse
 set number
 
